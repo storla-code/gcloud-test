@@ -22,3 +22,12 @@ class heartbeat {
         return "BaDum";
     }
 }
+
+@RestController
+class healthCheck {
+
+    @RequestMapping("/healthCheck")
+    public String getHeartbeat() {
+        return "STATUS: OK";
+    }
+}
