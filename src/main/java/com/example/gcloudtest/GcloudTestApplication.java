@@ -17,7 +17,7 @@ public class GcloudTestApplication {
 @RestController
 class heartbeat {
 
-    @RequestMapping
+    @RequestMapping("/heartbeat")
     public String getHeartbeat() {
         return "BaDum";
     }
