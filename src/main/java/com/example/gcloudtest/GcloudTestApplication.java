@@ -19,19 +19,20 @@ public class GcloudTestApplication {
 @RestController
 @Transactional
 class addBook {
-
-    final BookRepository bookRepository;
-
-    public addBook(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
+//
+//    final BookRepository bookRepository;
+//
+//    public addBook(BookRepository bookRepository) {
+//        this.bookRepository = bookRepository;
+//    }
 
     @RequestMapping
-    public void addBookToDb(){
-        Book book = new Book();
-        book.setId(100L);
-        book.setName("goodName");
-        bookRepository.saveAndFlush(book);
+    public String addBookToDb(){
+//        Book book = new Book();
+//        book.setId(100L);
+//        book.setName("goodName");
+//        bookRepository.saveAndFlush(book);
+        return "Hello world!";
     }
 }
 
