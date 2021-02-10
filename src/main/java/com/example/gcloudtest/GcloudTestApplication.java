@@ -7,6 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
+
 @SpringBootApplication
 public class GcloudTestApplication {
 
@@ -19,20 +21,18 @@ public class GcloudTestApplication {
 @RestController
 @Transactional
 class addBook {
-//
-//    final BookRepository bookRepository;
-//
-//    public addBook(BookRepository bookRepository) {
-//        this.bookRepository = bookRepository;
-//    }
+
+    final BookRepository bookRepository;
+
+    public addBook(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
 
     @RequestMapping
-    public String addBookToDb(){
-//        Book book = new Book();
-//        book.setId(100L);
-//        book.setName("goodName");
-//        bookRepository.saveAndFlush(book);
-        return "Hello world!";
+    public void addBookToDb(){
+        Book book = new Book();
+        book.setName(String.valueOf(Math.random()));
+        bookRepository.saveAndFlush(book);
     }
 }
 
