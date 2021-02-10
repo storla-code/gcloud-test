@@ -33,6 +33,7 @@ class addBook {
         Book book = new Book();
         book.setName(String.valueOf(Math.random()));
         bookRepository.saveAndFlush(book);
+        System.out.println("book added!");
     }
 }
 
